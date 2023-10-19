@@ -15,3 +15,20 @@ body {
 h1 {
    margin-bottom: 20px;
 }
+
+.btn {
+   display: block;
+   padding: 6px 40px;
+   bottom: 1px solid #fff;
+   border: none;
+   outline: none;
+   border-radius: 5px;
+   transition: all 0.3s ease;
+   cursor: pointer;
+   margin-top: 10px 15px;
+}
+
+
+.btn:hover {
+   background-color: #d2dce6;
+}
