@@ -1,8 +1,9 @@
 import CarItem from "./car-item/CarItem";
 import CreateCarForm from "./create-car-form/CreateCarForm";
 import { cars as carsData } from "./cars.data";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CarService } from "../../../services/car.service";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 function Home() {
   const [cars, setCars] = useState(carsData);
@@ -17,6 +18,8 @@ function Home() {
     fetchData();
 
   }, []);
+
+  const {user, setUser} = useContext(AuthContext)
 
   return (
     <>
