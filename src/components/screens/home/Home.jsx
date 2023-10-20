@@ -1,3 +1,4 @@
+import axios from 'axios'
 import CarItem from "./car-item/CarItem";
 import CreateCarForm from "./create-car-form/CreateCarForm";
 import { cars as carsData } from "./cars.data";
@@ -8,10 +9,9 @@ function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:4200/cars");
-      const data = await response.json();
+      const response = await axios.get("http://localhost:4200/cars");
 
-      setCars(data);
+      setCars(response.data);
     };
 
     fetchData();
