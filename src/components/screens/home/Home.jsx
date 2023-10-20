@@ -1,22 +1,11 @@
-import axios from 'axios'
 import CarItem from "./car-item/CarItem";
 import CreateCarForm from "./create-car-form/CreateCarForm";
 import { cars as carsData } from "./cars.data";
-import { useEffect, useState } from "react";
-import { CarService } from '../../../services/car.service';
+import { useState } from "react";
 
 function Home() {
   const [cars, setCars] = useState(carsData);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await CarService.getAll();
-
-      setCars(data);
-    };
-
-    fetchData();
-  }, []);
 
   return (
     <>
